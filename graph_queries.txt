@@ -1,0 +1,24 @@
+query MyQuery {
+  reserveParamsHistoryItems(
+    first: 1000
+    orderBy: timestamp
+    where: {
+      timestamp_gte: 1707674400
+      reserve: "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb480x2f39d218133afab8f2b819b1066c7e434ad94e9e"
+    }
+  ) {
+    id
+    reserve {
+      id
+      symbol
+      pool {
+        id
+      }
+    }
+    liquidityIndex
+    variableBorrowIndex
+    utilizationRate
+    stableBorrowRate
+    timestamp
+  }
+}
